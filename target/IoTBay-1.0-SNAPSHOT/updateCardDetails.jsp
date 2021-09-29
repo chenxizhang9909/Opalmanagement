@@ -20,6 +20,49 @@
         <title>update card</title>
     </head>
     <body onload="startTime()">
-        <h1>Hello World!</h1>
+        <div class="login_area">
+                <div class="container-md bg-white p-4" style="margin-top: 150px">
+                    <h2 class="text-info mb-2">Update Payment</h2>
+                    <form action="updatePayment" method="post">
+                        <input name="paymentId" value="" type="hidden">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">#</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="orderId" readonly value="">
+                            </div>
+                        </div>
+                       <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Opal card number</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="orderId" readonly value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Security code</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="orderId" readonly value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nickname</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="exdate" value="">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Card type</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="cardNumber" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
     </body>
 </html>
