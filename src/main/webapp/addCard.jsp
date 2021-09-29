@@ -17,7 +17,7 @@
         <script type="text/javascript" src="js/index.js"></script>
         <title>add card</title>
     </head>
-    <body>
+    <body onload="startTime()">
         <div class="login_area">
                 <div class="container-md bg-white p-4" style="margin-top: 150px">
                     <h2 class="text-info mb-2">Link card</h2>
@@ -38,6 +38,12 @@
                         
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nickname</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="nameOnCard">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Card type</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="nameOnCard">
                             </div>

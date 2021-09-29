@@ -32,6 +32,7 @@
                         <th scope="col">Opal card number</th>
                         <th scope="col">Security code</th>
                         <th scope="col">Nickname</th>
+                        <th scope="col">Card type</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
