@@ -11,4 +11,43 @@ package opal.entity;
  */
 public class opalcard {
     
+    private int cardId;
+    private int userId;
+    private int cardNo;
+    private int securityCode;
+    private String nickname;
+    private String cardType;
+    
+    public opalcard(){}
+    
+    public int getCardNo(){
+        return cardNo;
+    }
+    
+    public void setCardNo(int cardNo){
+        this.cardNo = cardNo;
+    } 
+    
+     public int getsecurityCode(){
+        return securityCode;
+    }
+    
+    public void setsecurityCode(int securityCode){
+        this.securityCode = securityCode;
+    } 
+    public String getnickname(){
+        return nickname;
+    }
+    
+    public void setnickname(String nickname){
+        this.nickname = nickname;
+    } 
+    public String getcardType(){
+        return cardType;
+    }
+    
+    public void setcardType(String cardType){
+        this.cardType = cardType;
+    } 
+            
 }
