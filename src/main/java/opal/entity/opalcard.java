@@ -9,7 +9,7 @@ package opal.entity;
  *
  * @author chengming
  */
-public class opalcard {
+public class OpalCard {
     
     private int cardId;
     private int userId;
@@ -18,7 +18,7 @@ public class opalcard {
     private String nickname;
     private String cardType;
     
-    public opalcard(){}
+    public OpalCard(){}
     
     public int getCardNo(){
         return cardNo;

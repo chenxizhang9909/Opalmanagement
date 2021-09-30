@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.iotbay.dao;
+package opal.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +24,10 @@ public class DBConnector extends DB {
 
         this.conn.close();
 
+    }
+
+    Connection openConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

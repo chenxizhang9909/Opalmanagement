@@ -6,7 +6,7 @@
 package com.mycompany.iotbay.controller;
 
 
-import com.mycompany.iotbay.dao.UserDao;
+import opal.dao.UserDao;
 import opal.entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
