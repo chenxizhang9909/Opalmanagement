@@ -4,6 +4,8 @@
     Author     : chengming
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="opal.entity.OpalCard"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,19 +18,20 @@
         <script type="text/javascript" src="js/index.js"></script>
         <title>card list</title>
     </head>
-    <body onload="startTime()">
+    <body>
         
-        
+        <%
+            ArrayList<OpalCard> cardlist = (ArrayList<OpalCard>) request.getAttribute("cardList");
+        %>
         <div class="container-md bg-white p-4" style="margin-top: 150px">
             <h2 class="text-info mb-2">Opal cards</h2>
             <div align="center">
-                <a href="addpayment.jsp">Add an Opal card</a>
+                <a href="addCard.jsp">Add an Opal card</a>
             </div>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">User ID</th>
                         <th scope="col">Opal card number</th>
                         <th scope="col">Security code</th>
                         <th scope="col">Nickname</th>
@@ -37,16 +40,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                
+                <% for (OpalCard opalcard : cardlist) {%>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="" class="btn btn-sm btn-secondary">View</a></td>
+                        <td><%= opalcard.getCardId()%></td>
+                        <td><%= opalcard.getCardNo()%></td>
+                        <td><%= opalcard.getsecurityCode()%></td>
+                        <td><%= opalcard.getnickname()%></td>
+                        <td><%= opalcard.getcardType()%></td>
+                        <td><a href="cardDetailServlet?cardId=<%= opalcard.getCardId()%>" class="btn btn-sm btn-secondary">View</a></td>
                     </tr>
-            
+                <%}%>
                 </tbody>
             </table>
         </div>

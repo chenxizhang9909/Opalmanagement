@@ -11,10 +11,16 @@ import java.sql.Connection;
  * @author bababab
  */
 public abstract class DB {
-    protected String URL = "jdbc:derby://localhost:1527/";//replace this string with your jdbc:derby local host url   
-    protected String db = "opalcard";//name of the database   
-    protected String dbuser = "root";//db root user   
-    protected String dbpass = "0000"; //db root password   
-    protected String driver = "org.apache.derby.jdbc.ClientDriver"; //jdbc client driver - built in with NetBeans   
-    protected Connection conn; //connection null-instance to be initialized in sub-classes
+   
+   protected String URL ="jdbc:mysql://myopalcardserver.mysql.database.azure.com:3306/opal?useSSL=false&requireSSL=false";
+    protected String dbuser = "opalcardadmin@myopalcardserver";//db root user
+    protected String dbpass = "0000opalcard!"; //db root password
+   protected String driver = "com.mysql.jdbc.Driver"; //jdbc client driver - built in with NetBeans
+     //protected String driver ="myopalcardserver.mysql.database.azure.com";   
+   
+//   protected String URL ="jdbc:mysql://localhost:3306/";
+//    protected String db = "Opal";//name of the database
+//    protected String dbuser = "root";//db root user
+//    protected String dbpass = "0000"; //db root password
+//   protected String driver = "com.mysql.jdbc.Driver"; 
 }

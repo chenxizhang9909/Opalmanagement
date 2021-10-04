@@ -4,6 +4,7 @@
     Author     : chengming
 --%>
 
+<%@page import="opal.entity.OpalCard"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,41 +20,41 @@
         <script type="text/javascript" src="js/index.js"></script>
         <title>update card</title>
     </head>
-    <body onload="startTime()">
+    <body >
+        <%
+            OpalCard opalcard = (OpalCard) request.getAttribute("opalcard");
+            String cardId=(String) request.getAttribute("cardID");
+        %>
         <div class="login_area">
                 <div class="container-md bg-white p-4" style="margin-top: 150px">
-                    <h2 class="text-info mb-2">Update Payment</h2>
-                    <form action="updatePayment" method="post">
-                        <input name="paymentId" value="" type="hidden">
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">#</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="orderId" readonly value="">
-                            </div>
-                        </div>
+                    <h2 class="text-info mb-2">Update Card</h2>
+                    <form action="updateCardServlet" method="post">
+                        
+                        <input name="cardId" value="${opalcard.getCardId()}" type="hidden">
+                        
                        <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Opal card number</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="orderId" readonly value="">
+                                <input type="text" class="form-control" name="cardno" value="${opalcard.getCardNo()}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Security code</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="orderId" readonly value="">
+                                <input type="text" class="form-control" name="code" value="${opalcard.getsecurityCode()}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nickname</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="exdate" value="">
+                                <input type="text" class="form-control" name="nickname" value="${opalcard.getnickname()}">
                             </div>
                         </div>
                         
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Card type</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="cardNumber" value="">
+                                <input type="text" class="form-control" name="type" value="${opalcard.getcardType()}">
                             </div>
                         </div>
 

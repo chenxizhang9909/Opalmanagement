@@ -4,6 +4,7 @@
     Author     : chengming
 --%>
 
+<%@page import="opal.entity.OpalCard"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,18 +19,23 @@
         <script type="text/javascript" src="js/index.js"></script>
         <title>card details</title>
     </head>
-    <body onload="startTime()">
+    <body >
+          <%
+            OpalCard opalcard = (OpalCard) request.getAttribute("opalcard");
+          //  session.setAttribute("cardId", opalcard.getCardId());
+        %>
+        
          <div class="container-md bg-white" style="margin-top: 150px">
             <table class="table"> 
-                <tr><th>#:</th><td></td></tr>
-                <tr><th>Opal card number:</th><td></td></tr>
-                <tr><th>Nickname:</th><td></td></tr>
-                <tr><th>Security Code:</th><td></td></tr>
-                <tr><th>Card type:</th><td></td></tr>
+                <tr><th>#:</th><td>${opalcard.getCardId()}</td></tr>
+                <tr><th>Opal card number:</th><td>${opalcard.getCardNo()}</td></tr>
+                <tr><th>Nickname:</th><td>${opalcard.getnickname()}</td></tr>
+                <tr><th>Security Code:</th><td>${opalcard.getsecurityCode()}</td></tr>
+                <tr><th>Card type:</th><td>${opalcard.getcardType()}</td></tr>
                 <tr>
                     <td colspan="2">
-                        <a href="" class="btn btn-sm btn-danger">Update</a>
-                        <a href="" class="btn btn-sm btn-primary">Delete</a>
+                        <a href="deleteCardServlet?cardId=${opalcard.cardId}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="updateCardServlet?cardId=${opalcard.cardId}" class="btn btn-sm btn-primary">Update</a>
                     </td>
                 </tr>
             </table>
