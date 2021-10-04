@@ -4,7 +4,7 @@
     Author     : bababab
 --%>
 
-<%@page import="com.mycompany.iotbay.models.User"%>
+<%@page import="opal.entity.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
