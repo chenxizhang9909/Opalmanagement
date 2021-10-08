@@ -4,18 +4,19 @@
  * and open the template in the editor.
  */
 package com.mycompany.iotbay.models;
-
 /**
  *
  * @author bababab
  */
 public class User {
-    private int id;
+    public int id;
     private String firstName; 
     private String lastName;
     private String email;
     private String password;    
     private String type;
+    private double balance;
+    private Card card;
 
     public int getId() {
         return id;
@@ -65,6 +66,19 @@ public class User {
         this.type = type;
     }
 
-
+    public double getBalance(){
+        return balance;
+    }
     
+    public void setBalance(double balance){
+        this.balance = balance;
+    }
+    
+    public Card getCard(){
+        return card;
+    }
+    
+    public void setCard(Card card){
+        this.card = card;
+    }    
 }

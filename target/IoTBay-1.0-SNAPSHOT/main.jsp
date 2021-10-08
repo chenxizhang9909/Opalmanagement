@@ -21,6 +21,9 @@
         <div>
             <a href="profile.jsp">My Profile</a>
         </div>
+        <div>
+            <a href="card.jsp">Card Top-up</a>
+        </div>
         <%
             } else {
                 response.sendRedirect("index.html");

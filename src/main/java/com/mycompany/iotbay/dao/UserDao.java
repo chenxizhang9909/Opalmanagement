@@ -46,6 +46,7 @@ public class UserDao {
             user.setEmail(result.getString("email"));
             user.setPassword(result.getString("password"));
             user.setType(result.getString("type"));
+            user.setBalance(result.getDouble("balance"));
             return user;
         }
         return null;
@@ -53,24 +54,26 @@ public class UserDao {
 
 //Add a user-data into the database   
     public void addUser(User user) throws SQLException {
-        PreparedStatement p = conn.prepareStatement("insert into USERS(FIRSTNAME, LASTNAME, EMAIL, PASSWORD, TYPE) values(?, ?, ?, ?, ?)");
+        PreparedStatement p = conn.prepareStatement("insert into USERS(FIRSTNAME, LASTNAME, EMAIL, PASSWORD, TYPE, BALANCE) values(?, ?, ?, ?, ?, ?)");
         p.setString(1, user.getFirstName());
         p.setString(2, user.getLastName());
         p.setString(3, user.getEmail());
         p.setString(4, user.getPassword());
         p.setString(5, user.getType());
+        p.setDouble(6, user.getBalance());
         p.executeUpdate();
     }
 
 //update a user details in the database   
     public void updateUser(User user) throws SQLException {
-        PreparedStatement p = conn.prepareStatement("update USERS set FIRSTNAME = ?, LASTNAME=?, EMAIL=?, PASSWORD=?, TYPE=? where id = ?");
+        PreparedStatement p = conn.prepareStatement("update USERS set FIRSTNAME = ?, LASTNAME=?, EMAIL=?, PASSWORD=?, TYPE=?, BALANCE=?, where id = ?");
         p.setString(1, user.getFirstName());
         p.setString(2, user.getLastName());
         p.setString(3, user.getEmail());
         p.setString(4, user.getPassword());
         p.setString(5, user.getType());
-        p.setInt(6, user.getId());
+        p.setDouble(6, user.getBalance());
+        p.setInt(7, user.getId());
         p.executeUpdate();
     }
 
